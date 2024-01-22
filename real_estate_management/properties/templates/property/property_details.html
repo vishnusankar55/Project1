@@ -1,0 +1,24 @@
+<!-- properties/templates/properties/property_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ property.name }} Details</title>
+</head>
+<body>
+    <h1>{{ property.name }} Details</h1>
+    <p><strong>Name:</strong> {{ property.name }}</p>
+    <p><strong>Address:</strong> {{ property.address }}</p>
+    <p><strong>Location:</strong> {{ property.location }}</p>
+    <p><strong>Features:</strong> {{ property.features }}</p>
+
+    <h2>Units</h2>
+    <ul>
+        {% for unit in units %}
+            <li>{{ unit.type }} Unit: ${{ unit.rent_cost }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

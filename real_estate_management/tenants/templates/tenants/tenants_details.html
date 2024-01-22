@@ -1,0 +1,22 @@
+<!-- tenants/templates/tenants/tenant_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tenant.name }} Details</title>
+</head>
+<body>
+    <h1>{{ tenant.name }} Details</h1>
+    <p><strong>Name:</strong> {{ tenant.name }}</p>
+    <p><strong>Address:</strong> {{ tenant.address }}</p>
+
+    <h2>Rental Agreements</h2>
+    <ul>
+        {% for agreement in agreements %}
+            <li>{{ agreement.start_date }} - {{ agreement.end_date }}: ${{ agreement.monthly_rent }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
